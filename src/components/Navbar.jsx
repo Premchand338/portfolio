@@ -1,12 +1,15 @@
 function Navbar() {
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-gray-800">
-      <h2 className="text-xl font-bold">MyPortfolio</h2>
-      <div className="flex gap-6">
-        <a href="#about" className="hover:text-blue-400">About</a>
-        <a href="#projects" className="hover:text-blue-400">Projects</a>
-        <a href="#contact" className="hover:text-blue-400">Contact</a>
-      </div>
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-8 px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg">
+      <a href="#about" className="text-sm font-medium hover:text-blue-400 transition-colors">
+        About
+      </a>
+      <a href="#projects" className="text-sm font-medium hover:text-blue-400 transition-colors">
+        Projects
+      </a>
+      <a href="#contact" className="text-sm font-medium hover:text-blue-400 transition-colors">
+        Contact
+      </a>
     </nav>
   )
 }
