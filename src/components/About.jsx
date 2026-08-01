@@ -1,11 +1,8 @@
-const skills = [
-  { name: "React", category: "frontend" },
-  { name: "JavaScript", category: "frontend" },
-  { name: "Tailwind CSS", category: "frontend" },
-  { name: "Node.js", category: "backend" },
-  { name: "REST APIs", category: "backend" },
-  { name: "Git & GitHub", category: "tools" },
-  { name: "Vercel", category: "tools" },
+const interests = [
+  { icon: "📷", label: "Photography" },
+  { icon: "🛡️", label: "Insurance" },
+  { icon: "🎬", label: "Content Creation" },
+  { icon: "📚", label: "Reading" },
 ]
 
 function About() {
@@ -21,26 +18,24 @@ function About() {
         </span>
       </h2>
 
-      <p className="text-gray-400 text-lg max-w-2xl mb-12">
+      <p className="text-gray-400 text-lg max-w-2xl mb-16">
         I'm learning to build production-grade React applications by shipping
         real projects — not tutorials. Currently focused on mastering React
         fundamentals before moving into AI-powered product development.
       </p>
 
-      <div className="flex flex-wrap gap-3">
-        {skills.map((skill) => (
-          <span
-            key={skill.name}
-            className={`text-sm px-4 py-2 rounded-full border ${
-              skill.category === "frontend"
-                ? "border-blue-400/30 text-blue-300 bg-blue-500/10"
-                : skill.category === "backend"
-                ? "border-purple-400/30 text-purple-300 bg-purple-500/10"
-                : "border-gray-500/30 text-gray-300 bg-gray-500/10"
-            }`}
+      <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-6">
+        Beyond Code
+      </h3>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {interests.map((interest) => (
+          <div
+            key={interest.label}
+            className="bg-gray-900 border border-white/10 rounded-xl p-5 text-center hover:border-blue-400/30 transition-colors"
           >
-            {skill.name}
-          </span>
+            <span className="text-3xl block mb-2">{interest.icon}</span>
+            <span className="text-sm text-gray-400">{interest.label}</span>
+          </div>
         ))}
       </div>
     </section>
