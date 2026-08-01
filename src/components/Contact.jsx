@@ -32,7 +32,7 @@ const [showSuccess, setShowSuccess] = useState(false)
   }
 
   return (
-    <section id="contact" className="px-6 md:px-16 py-24 bg-gray-950">
+    <section id="contact" className="w-full px-6 md:px-12 lg:px-20 py-24">
 
         
       {/* Success toast */}
@@ -42,7 +42,7 @@ const [showSuccess, setShowSuccess] = useState(false)
         </div>
       )}
       
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 bg-gray-900 border border-white/10 rounded-2xl p-8 md:p-12">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-gray-900 border border-white/10 rounded-2xl p-8 md:p-16">
         
         {/* Left side: info */}
         <div>

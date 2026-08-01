@@ -24,7 +24,7 @@ const colorMap = {
 
 function Skills() {
   return (
-    <section id="skills" className="px-6 md:px-16 py-24 bg-gray-950">
+    <section id="skills" className="w-full px-6 md:px-12 lg:px-20 py-24">
       <p className="text-blue-400 text-xs tracking-widest uppercase mb-3">
         — What I Work With
       </p>

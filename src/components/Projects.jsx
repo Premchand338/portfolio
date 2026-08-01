@@ -25,7 +25,7 @@ const projectList = [
 
 function Projects() {
   return (
-    <section id="work" className="px-6 md:px-16 py-24 bg-gray-950">
+    <section id="work" className="w-full px-6 md:px-12 lg:px-20 py-24">
       <p className="text-blue-400 text-xs tracking-widest uppercase mb-3">
         — Selected Work
       </p>

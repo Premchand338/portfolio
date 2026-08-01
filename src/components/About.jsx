@@ -7,13 +7,13 @@ const interests = [
 
 function About() {
   return (
-    <section id="about" className="px-6 md:px-16 py-24 bg-gray-950">
+    <section id="about" className="w-full px-6 md:px-12 lg:px-20 py-24">
       <p className="text-blue-400 text-xs tracking-widest uppercase mb-3">
         — About Me
       </p>
       <h2 className="text-4xl md:text-5xl font-bold mb-8">
         Building with{" "}
-        <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        <span className="bg-linear Just-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           purpose.
         </span>
       </h2>
