@@ -6,13 +6,13 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import TechMarquee from "./components/TechMarquee";
-
-
+import CustomCursor from "./components/CustomCursor";
 
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-950 text-white pt-10">
+      {/* <CustomCursor /> */}
       <Navbar />
       <Hero />
       <TechMarquee />

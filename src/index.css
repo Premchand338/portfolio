@@ -1,3 +1,8 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
 @import "tailwindcss";
 
 body {
@@ -39,4 +44,76 @@ h1, h2, h3 {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowBorder {
+  0%, 100% {
+    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.2);
+  }
+  50% {
+    box-shadow: inset 0 0 12px rgba(96, 165, 250, 0.3);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+.group:hover {
+  animation: glowBorder 2s ease-in-out infinite;
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
+
+
+@keyframes brainFloat {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotateY(5deg);
+  }
+  50% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  75% {
+    transform: translateY(15px) rotateY(-5deg);
+  }
+}
+
+.animate-brain-float {
+  animation: brainFloat 6s ease-in-out infinite;
+}
+
+@keyframes brainGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+.animate-brain-glow {
+  animation: brainGlow 4s ease-in-out infinite;
 }

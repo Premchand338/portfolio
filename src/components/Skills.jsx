@@ -24,11 +24,11 @@ const colorMap = {
 
 function Skills() {
   return (
-    <section id="skills" className="w-full px-6 md:px-12 lg:px-20 py-24">
+    <section id="skills" className="w-full px-6 md:px-12 lg:px-16 py-14">
       <p className="text-blue-400 text-xs tracking-widest uppercase mb-3">
         — What I Work With
       </p>
-      <h2 className="text-4xl md:text-5xl font-bold mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold mb-10">
         My{" "}
         <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           Toolkit.

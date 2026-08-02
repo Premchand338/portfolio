@@ -1,45 +1,90 @@
+const process = [
+  {
+    step: "01",
+    title: "Understand",
+    description:
+      "Break down the real problem before touching any code — what's actually slow, repetitive, or broken.",
+  },
+  {
+    step: "02",
+    title: "Automate",
+    description:
+      "Identify what can be automated or AI-assisted, so the solution scales beyond manual effort.",
+  },
+  {
+    step: "03",
+    title: "Build",
+    description:
+      "Ship a working interface fast — functional first, polished through iteration.",
+  },
+  {
+    step: "04",
+    title: "Refine",
+    description:
+      "Test, debug, and improve based on real usage — not assumptions.",
+  },
+];
+
 const interests = [
   { icon: "📷", label: "Photography" },
   { icon: "🛡️", label: "Insurance" },
   { icon: "🎬", label: "Content Creation" },
   { icon: "📚", label: "Reading" },
-]
+];
 
 function About() {
   return (
-    <section id="about" className="w-full px-6 md:px-12 lg:px-20 py-24">
-      <p className="text-blue-400 text-xs tracking-widest uppercase mb-3">
-        — About Me
-      </p>
-      <h2 className="text-4xl md:text-5xl font-bold mb-8">
-        Building with{" "}
-        <span className="bg-linear Just-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-          purpose.
-        </span>
-      </h2>
+    <section id="about" className="px-6 md:px-12 lg:px-20 pb-10 bg-gray-950">
+      <div className="max-w-5xl text-left">
+        <p className="text-blue-400 text-md tracking-widest uppercase my-3">
+          — About Me
+        </p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          Automation-first,{" "}
+          <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            AI-driven.
+          </span>
+        </h2>
 
-      <p className="text-gray-400 text-lg max-w-2xl mb-16">
-        I'm learning to build production-grade React applications by shipping
-        real projects — not tutorials. Currently focused on mastering React
-        fundamentals before moving into AI-powered product development.
-      </p>
+        <p className="text-gray-400 text-lg max-w-3xl mb-10 mt-5">
+          I approach every product the same way — understand the real workflow,
+          automate the repetitive parts, and use AI where it genuinely saves
+          time, not just because it's trendy. Currently building toward
+          production-grade AI products through hands-on projects.
+        </p>
+      </div>
 
-      <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-6">
-        Beyond Code
-      </h3>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {interests.map((interest) => (
+      {/* Process steps */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {process.map((item) => (
           <div
-            key={interest.label}
-            className="bg-gray-900 border border-white/10 rounded-xl p-5 text-center hover:border-blue-400/30 transition-colors"
+            key={item.step}
+            className="w-full bg-transparent border rounded-2xl border-white/50 px-3 py-3 text-white placeholder-gray-600 transition-all duration-300 ease-out hover:border-blue-300/50 focus:outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-400/20"
           >
-            <span className="text-3xl block mb-2">{interest.icon}</span>
-            <span className="text-sm text-gray-400">{interest.label}</span>
+            <span className="text-blue-400 text-sm font-mono">{item.step}</span>
+            <h3 className="text-lg font-semibold mt-2 mb-2">{item.title}</h3>
+            <p className="text-gray-400 text-sm">{item.description}</p>
           </div>
         ))}
       </div>
+
+      {/* Interests */}
+      {/* <h3 className="text-sm text-gray-300 uppercase tracking-widest mb-6">
+        Beyond Code
+      </h3> */}
+      {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {interests.map((interest) => (
+          <div
+            key={interest.label}
+            className="bg-gray-950 rounded-xl p-5 text-center w-full border border-white/50 text-white placeholder-gray-600 transition-all duration-300 ease-out hover:border-blue-300/50 focus:outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-400/20"
+          >
+            <span className="text-3xl block mb-2">{interest.icon}</span>
+            <span className="text-lg text-gray-400">{interest.label}</span>
+          </div>
+        ))}
+      </div> */}
     </section>
-  )
+  );
 }
 
-export default About
+export default About;
