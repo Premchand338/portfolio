@@ -1,3 +1,8 @@
+import expenseTrackerImg from "../assets/expense_tracker.jpg";
+import movieSearchImg from "../assets/movie_search.jpg";
+import aiResumeBuilderImg from "../assets/ai_resume_builder.jpg";
+import adminDashboardImg from "../assets/admin_dashboard.jpg";
+
 const projectList = [
   {
     id: 1,
@@ -9,6 +14,7 @@ const projectList = [
     stats: ["Reduces tracking time by 80%", "Real-time visibility"],
     tech: ["React", "Chart.js", "LocalStorage"],
     gradient: "from-blue-900 to-slate-900",
+    image: expenseTrackerImg,
     liveLink: "#",
     detailsLink: "#",
   },
@@ -22,6 +28,7 @@ const projectList = [
     stats: ["Sub-100ms response time", "Debounced input"],
     tech: ["React", "REST API", "Tailwind"],
     gradient: "from-purple-900 to-slate-900",
+    image: movieSearchImg,
     liveLink: "#",
     detailsLink: "#",
   },
@@ -35,6 +42,7 @@ const projectList = [
     stats: ["AI-assisted refinement", "Export-ready formats"],
     tech: ["React", "OpenAI API", "Tailwind"],
     gradient: "from-emerald-900 to-slate-900",
+    image: aiResumeBuilderImg,
     liveLink: "#",
     detailsLink: "#",
   },
@@ -48,6 +56,7 @@ const projectList = [
     stats: ["Real-time data sync", "Sub-1s load time"],
     tech: ["React", "Recharts", "REST API"],
     gradient: "from-orange-900 to-slate-900",
+    image: adminDashboardImg,
     liveLink: "#",
     detailsLink: "#",
   },
@@ -66,20 +75,24 @@ function Projects() {
         </span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {projectList.map((project) => (
           <div
             key={project.id}
-            className="group relative bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
+            className="group relative bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden hover:border-blue-400/50 transition-all duration-300"
           >
             {/* Background gradient shift on hover */}
             <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300 from-blue-400 to-transparent pointer-events-none" />
 
             {/* Card header/banner */}
-            <div
-              className={`relative h-48 bg-linear-to-br ${project.gradient} p-4 group-hover:brightness-110 transition-all duration-300`}
-            >
-              <span className="absolute top-4 left-4 text-xs font-mono bg-black/40 px-2 py-1 rounded text-blue-300 group-hover:bg-blue-500/40 transition-colors duration-300">
+            <div className="relative overflow-hidden rounded-t-xl h-44 sm:h-48 lg:h-56 shadow-none">
+              <img
+                src={project.image}
+                alt={`${project.title} screenshot`}
+                className="w-full h-full object-cover shadow-none transition-transform duration-500 group-hover:scale-105"
+                ></img>
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent" />
+              <span className="absolute top-4 left-4 text-xs font-mono bg-black/60 px-2 py-1 rounded text-white transition-colors duration-300">
                 {project.number}
               </span>
             </div>
@@ -124,19 +137,19 @@ function Projects() {
                   ))}
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 w-full justify-between sm:w-auto sm:justify-end mt-6">
+                <div className="flex flex-col gap-3 w-full sm:w-auto sm:flex-row sm:justify-end mt-6">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-600"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400/30"
                   >
                     Live Link
                     <span aria-hidden="true">↗</span>
                   </a>
                   <a
                     href={project.detailsLink}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 dark:border-white/20 bg-gray-100 dark:bg-white/5 px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white transition hover:border-blue-400 dark:hover:border-blue-300 hover:bg-gray-200 dark:hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition duration-200 hover:border-slate-500 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400/20"
                   >
                     Project details
                   </a>

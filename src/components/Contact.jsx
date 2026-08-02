@@ -26,7 +26,10 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full px-6 md:px-12 lg:px-20 py-8 bg-white dark:bg-transparent">
+    <section
+      id="contact"
+      className="group w-full px-6 md:px-12 lg:px-20 py-8 bg-white dark:bg-transparent transition-all duration-300 hover:bg-white/95 dark:hover:bg-slate-950/95"
+    >
       {/* Success toast */}
       {showSuccess && (
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-green-500/90 text-white px-6 py-3 rounded-full shadow-lg text-sm font-medium">
@@ -34,7 +37,7 @@ function Contact() {
         </div>
       )}
 
-      <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-transparent rounded-2xl p-8 md:p-16">
+      <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-transparent rounded-2xl p-8 md:p-16 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-blue-500/10 group-hover:-translate-y-1">
         {/* Left side: info */}
         <div>
           <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">
@@ -44,10 +47,10 @@ function Contact() {
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            If There's a real workflow problem — something that eats your time &
-            causes errors today. The team wants sustainable solutions, not quick
-            fixes that break later , I can understand your business first, then
-            build the tool.
+            If there's a real workflow problem — something that eats your time
+            and causes repeat errors — I'm the teammate for sustainable
+            solutions, not quick fixes that break later. Tell me the problem,
+            I'll understand your business first, then build the tool.
           </p>
 
           <div className="flex flex-col gap-4 text-gray-700 dark:text-gray-300 py-5">
@@ -57,7 +60,8 @@ function Contact() {
             >
               ✉️ iamprem338@gmail.com
             </a>
-            <a  href="https://www.linkedin.com/in/premchand-shahu/"
+            <a
+              href="https://www.linkedin.com/in/premchand-shahu/"
               className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               💼 LinkedIn
@@ -72,8 +76,10 @@ function Contact() {
             </a>
           </div>
 
-          <div className="mt-10 bg-gray-100/50 dark:bg-gray-950/50 border border-gray-300 dark:border-white/70 rounded-xl p-4">
-            <p className="font-medium text-gray-900 dark:text-white">📍 Mumbai , India</p>
+          <div className="mt-10 bg-gray-100/50 dark:bg-gray-950/50 border border-gray-400 dark:border-white/70 rounded-xl p-4">
+            <p className="font-medium text-gray-900 dark:text-white">
+              📍 Mumbai , India
+            </p>
             <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
               Open to Remote work, IST hours, flexible for overlap.
             </p>
@@ -84,18 +90,22 @@ function Contact() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Name</label>
+              <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">
+                Name
+              </label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="w-full bg-transparent border rounded border-gray-300 dark:border-white/10 px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors"
+                className="w-full bg-transparent border rounded border-gray-400 dark:border-white/10 px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors"
               />
             </div>
             <div>
-              <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Email</label>
+              <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -108,7 +118,9 @@ function Contact() {
           </div>
 
           <div>
-            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">Message</label>
+            <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">
+              Message
+            </label>
             <textarea
               name="message"
               value={formData.message}
@@ -121,7 +133,7 @@ function Contact() {
 
           <button
             type="submit"
-            className="bg-linear-to-r from-blue-400 to-purple-500 hover:opacity-90 transition-opacity rounded-full py-3 font-semibold text-white"
+            className="relative overflow-hidden rounded-full px-8 py-3 font-semibold text-white transition-all duration-300 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-[0_18px_70px_-28px_rgba(139,92,246,0.8)] hover:-translate-y-1 hover:shadow-[0_22px_95px_-35px_rgba(236,72,153,0.7)] focus:outline-none focus:ring-2 focus:ring-blue-400/40"
           >
             Send Message →
           </button>
@@ -132,9 +144,13 @@ function Contact() {
         </form>
       </div>
 
-      <p className="text-gray-500 dark:text-gray-600 text-sm mt-12 text-center">
-        @ Premchand Shahu - Creativity is intelligence having fun
-      </p>
+      <div className="max-w-full mx-auto mt-16 pt-8 border-t border-gray-300 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-500">
+        <p>© 2026 Premchand Shahu</p>
+        <p className="flex items-center gap-1">
+          Creating AI & automation-driven experiences{" "}
+        </p>
+        <p>Built with React & Tailwind CSS</p>
+      </div>
     </section>
   );
 }

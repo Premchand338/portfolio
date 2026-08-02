@@ -8,7 +8,6 @@ import Skills from "./components/Skills";
 import TechMarquee from "./components/TechMarquee";
 import CustomCursor from "./components/CustomCursor";
 
-
 function App() {
   return (
     <div className="min-h-screen bg-gray-950 text-white pt-10">
@@ -17,8 +16,13 @@ function App() {
       <Hero />
       <TechMarquee />
       <Projects />
-      <Skills />
-      <About />
+      <section className="px-6 md:px-12 lg:px-20 pb-20 bg-white dark:bg-gray-950">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <Skills />
+          <About />
+        </div>
+      </section>
+
       <Contact />
       <BackToTop />
     </div>
