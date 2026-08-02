@@ -16,7 +16,7 @@ function App() {
       <Hero />
       <TechMarquee />
       <Projects />
-      <section className="px-6 md:px-12 lg:px-20 pb-20 bg-white dark:bg-gray-950">
+      <section id="skills" className="px-6 md:px-12 lg:px-20 pb-20 bg-white dark:bg-gray-950 scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <Skills />
           <About />
