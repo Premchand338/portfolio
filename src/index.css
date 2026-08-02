@@ -1,9 +1,12 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 html {
   scroll-behavior: smooth;
 }
 
-@import "tailwindcss";
+
 
 body {
   font-family: "Roboto", sans-serif;
@@ -117,3 +120,41 @@ h1, h2, h3 {
 .animate-brain-glow {
   animation: brainGlow 4s ease-in-out infinite;
 }
+
+/* Curved floating paths for hero labels */
+@keyframes floatPath1 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(14px, -10px) rotate(-3deg); }
+  50% { transform: translate(0px, -18px) rotate(0deg); }
+  75% { transform: translate(-12px, -8px) rotate(3deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes floatPath2 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(-14px, -8px) rotate(3deg); }
+  50% { transform: translate(0px, -20px) rotate(0deg); }
+  75% { transform: translate(12px, -6px) rotate(-3deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes floatPath3 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(18px, 8px) rotate(4deg); }
+  50% { transform: translate(0px, 16px) rotate(0deg); }
+  75% { transform: translate(-14px, 6px) rotate(-4deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes floatPath4 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(-16px, 10px) rotate(-4deg); }
+  50% { transform: translate(0px, 18px) rotate(0deg); }
+  75% { transform: translate(14px, 8px) rotate(4deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.animate-float-path-1 { animation: floatPath1 5.5s ease-in-out infinite; }
+.animate-float-path-2 { animation: floatPath2 6s ease-in-out infinite; }
+.animate-float-path-3 { animation: floatPath3 5.8s ease-in-out infinite; }
+.animate-float-path-4 { animation: floatPath4 6.2s ease-in-out infinite; }

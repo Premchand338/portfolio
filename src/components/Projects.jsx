@@ -55,22 +55,22 @@ const projectList = [
 
 function Projects() {
   return (
-    <section id="work" className="px-6 md:px-12 lg:px-20 py-20 bg-gray-950">
-      <p className="text-blue-400 text-xs tracking-widest uppercase mb-3">
+    <section id="work" className="px-6 md:px-12 lg:px-20 py-20 bg-white dark:bg-gray-950">
+      <p className="text-blue-600 dark:text-blue-400 text-xs tracking-widest uppercase mb-3">
         — Selected Work
       </p>
-      <h2 className="text-4xl md:text-5xl font-bold mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-gray-900 dark:text-white">
         Projects that{" "}
         <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           matter.
         </span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {projectList.map((project) => (
           <div
             key={project.id}
-            className="group relative bg-gray-900 border border-white/10 rounded-xl overflow-hidden hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
+            className="group relative bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
           >
             {/* Background gradient shift on hover */}
             <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300 from-blue-400 to-transparent pointer-events-none" />
@@ -82,24 +82,17 @@ function Projects() {
               <span className="absolute top-4 left-4 text-xs font-mono bg-black/40 px-2 py-1 rounded text-blue-300 group-hover:bg-blue-500/40 transition-colors duration-300">
                 {project.number}
               </span>
-
-              {/* Arrow that appears on hover */}
-              {/* <div className="absolute bottom-4 right-4 text-blue-400 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div> */}
             </div>
 
             {/* Card body */}
-            <div className="p-6 relative z-10">
-              <h3 className="text-xl font-bold mb-1 group-hover:text-blue-300 transition-colors duration-300">
+            <div className="p-6 relative z-10 border border-gray-200 dark:border-white/10">
+              <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300">
                 {project.title}
               </h3>
-              <p className="text-blue-400 text-sm mb-4 group-hover:text-blue-300 transition-colors duration-300">
+              <p className="text-blue-600 dark:text-blue-400 text-sm mb-4 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300">
                 {project.tagline}
               </p>
-              <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300 transition-colors duration-300 line-clamp-2">
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300 line-clamp-2">
                 {project.description}
               </p>
 
@@ -108,7 +101,7 @@ function Projects() {
                 {project.stats.map((stat) => (
                   <span
                     key={stat}
-                    className="text-xs bg-blue-500/20 text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full animate-slide-up"
+                    className="text-xs bg-blue-500/10 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full animate-slide-up"
                     style={{
                       animationDelay: `${project.stats.indexOf(stat) * 0.05}s`,
                     }}
@@ -124,7 +117,7 @@ function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs text-gray-200 border border-white/10 group-hover:border-white/30 px-3 py-2 rounded transition-colors duration-300"
+                      className="text-xs text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-white/10 group-hover:border-gray-400 dark:group-hover:border-white/30 px-3 py-2 rounded transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -143,7 +136,7 @@ function Projects() {
                   </a>
                   <a
                     href={project.detailsLink}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-blue-300 hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 dark:border-white/20 bg-gray-100 dark:bg-white/5 px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white transition hover:border-blue-400 dark:hover:border-blue-300 hover:bg-gray-200 dark:hover:bg-white/10"
                   >
                     Project details
                   </a>

@@ -17,18 +17,18 @@ const skillCategories = [
 ]
 
 const colorMap = {
-  blue: "border-blue-400/30 text-blue-300 bg-blue-500/10",
-  purple: "border-purple-400/30 text-purple-300 bg-purple-500/10",
-  gray: "border-gray-500/30 text-gray-300 bg-gray-500/10",
+  blue: "border-blue-400/30 text-blue-700 dark:text-blue-300 bg-blue-500/10",
+  purple: "border-purple-400/30 text-purple-700 dark:text-purple-300 bg-purple-500/10",
+  gray: "border-gray-400/30 text-gray-700 dark:text-gray-300 bg-gray-500/10",
 }
 
 function Skills() {
   return (
-    <section id="skills" className="w-full px-6 md:px-12 lg:px-16 py-14">
-      <p className="text-blue-400 text-xs tracking-widest uppercase mb-3">
+    <section id="skills" className="w-full px-6 md:px-12 lg:px-16 py-14 bg-white dark:bg-gray-950">
+      <p className="text-blue-600 dark:text-blue-400 text-xs tracking-widest uppercase mb-3">
         — What I Work With
       </p>
-      <h2 className="text-4xl md:text-5xl font-bold mb-10">
+      <h2 className="text-4xl md:text-5xl font-bold mb-10 text-gray-900 dark:text-white">
         My{" "}
         <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           Toolkit.
@@ -39,9 +39,9 @@ function Skills() {
         {skillCategories.map((category) => (
           <div
             key={category.title}
-            className="bg-gray-900 border border-white/10 rounded-xl p-6"
+            className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl p-6"
           >
-            <h3 className="text-lg font-semibold mb-5">{category.title}</h3>
+            <h3 className="text-lg font-semibold mb-5 text-gray-900 dark:text-white">{category.title}</h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
                 <span
