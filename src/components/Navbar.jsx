@@ -35,9 +35,7 @@ function Navbar() {
 
         {/* Right side controls */}
         <div className="flex items-center gap-6">
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
+          <ThemeToggle />
           <a
             href="#contact"
             className="hidden md:inline-flex items-center px-4 py-2 rounded-full bg-blue-500 text-white text-sm font-semibold shadow-lg shadow-blue-500/20 transition hover:bg-blue-600"
