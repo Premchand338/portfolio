@@ -23,7 +23,7 @@ const process = [
 
 function About() {
   return (
-    <div>
+    <div id="about" className="scroll-mt-24">
       <p className="text-blue-600 dark:text-blue-400 text-xs tracking-widest uppercase mb-3">
         — About Me
       </p>
