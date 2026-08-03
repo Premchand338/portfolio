@@ -75,22 +75,22 @@ function Projects() {
         </span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {projectList.map((project) => (
           <div
             key={project.id}
-            className="group relative bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden hover:border-blue-400/50 transition-all duration-300"
+            className="group relative bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden hover:border-blue-400/50 transition-all duration-300 flex flex-col"
           >
             {/* Background gradient shift on hover */}
-            <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300 from-blue-400 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300 from-blue-400 to-transparent pointer-events-none z-10" />
 
             {/* Card header/banner */}
-            <div className="relative overflow-hidden rounded-t-xl h-44 sm:h-48 lg:h-56 shadow-none">
+            <div className="relative overflow-hidden rounded-t-xl h-44 sm:h-48 lg:h-40 shadow-none flex-shrink-0">
               <img
                 src={project.image}
                 alt={`${project.title} screenshot`}
                 className="w-full h-full object-cover shadow-none transition-transform duration-500 group-hover:scale-105"
-                ></img>
+              />
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent" />
               <span className="absolute top-4 left-4 text-xs font-mono bg-black/60 px-2 py-1 rounded text-white transition-colors duration-300">
                 {project.number}
@@ -98,58 +98,55 @@ function Projects() {
             </div>
 
             {/* Card body */}
-            <div className="p-6 relative z-10 border border-gray-200 dark:border-white/10">
-              <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300">
+            <div className="p-6 relative z-10 flex flex-col flex-1">
+              <h3 className="text-lg font-bold mb-1 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300">
                 {project.title}
               </h3>
-              <p className="text-blue-600 dark:text-blue-400 text-sm mb-4 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300">
+              <p className="text-blue-600 dark:text-blue-400 text-sm mb-3 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300">
                 {project.tagline}
               </p>
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300 line-clamp-2">
                 {project.description}
               </p>
 
-              {/* Stat badges - slide up on hover */}
-              <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* Stat badges - collapses to zero height when hidden */}
+              <div className="flex flex-wrap gap-2 max-h-0 group-hover:max-h-20 opacity-0 group-hover:opacity-100 group-hover:mb-4 overflow-hidden transition-all duration-300">
                 {project.stats.map((stat) => (
                   <span
                     key={stat}
-                    className="text-xs bg-blue-500/10 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full animate-slide-up"
-                    style={{
-                      animationDelay: `${project.stats.indexOf(stat) * 0.05}s`,
-                    }}
+                    className="text-xs bg-blue-500/10 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full"
                   >
                     {stat}
                   </span>
                 ))}
               </div>
 
-              {/* Tech tags and action buttons */}
-              <div className="flex flex-wrap items-center justify-between gap-3 my-6">
-                <div className="flex flex-wrap items-center gap-2 max-w-full opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+              {/* Spacer pushes tech/buttons to bottom - keeps card heights equal */}
+              <div className="mt-auto">
+                <div className="flex flex-wrap items-center gap-2 mb-4 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-white/10 group-hover:border-gray-400 dark:group-hover:border-white/30 px-3 py-2 rounded transition-colors duration-300"
+                      className="text-xs text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-white/10 group-hover:border-gray-400 dark:group-hover:border-white/30 px-2 py-1 rounded transition-colors duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex flex-col gap-3 w-full sm:w-auto sm:flex-row sm:justify-end mt-6">
+                <div className="flex flex-col gap-2 sm:flex-row">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400/30"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 dark:bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-slate-700 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-slate-400/30"
                   >
                     Live Link
                     <span aria-hidden="true">↗</span>
                   </a>
                   <a
                     href={project.detailsLink}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition duration-200 hover:border-slate-500 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400/20"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 dark:border-white/20 bg-white dark:bg-white/5 px-4 py-2 text-sm font-semibold text-slate-800 dark:text-white transition duration-200 hover:border-slate-500 dark:hover:border-blue-300 hover:bg-slate-50 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-slate-400/20"
                   >
                     Project details
                   </a>
@@ -158,7 +155,7 @@ function Projects() {
             </div>
 
             {/* Bottom accent line that extends on hover */}
-            <div className="absolute bottom-0 left-0 h-1 bg-linear-to-r from-blue-400 to-purple-400 w-0 group-hover:w-full transition-all duration-500" />
+            <div className="absolute bottom-0 left-0 h-1 bg-linear-to-r from-blue-400 to-purple-400 w-0 group-hover:w-full transition-all duration-500 z-20" />
           </div>
         ))}
       </div>
