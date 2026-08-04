@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import TechMarquee from "./components/TechMarquee";
 import CustomCursor from "./components/CustomCursor";
+// import DecorativeBackground from "./components/DecorativeBackground";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
       <Hero />
       <TechMarquee />
       <Projects />
-      <section id="skills" className="px-6 md:px-12 lg:px-20 pb-20 bg-white dark:bg-gray-950 scroll-mt-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section id="skills" className="relative px-6 md:px-12 lg:px-20 pb-20 bg-white dark:bg-gray-950 scroll-mt-24">
+         {/* <DecorativeBackground variant="skillsAbout" /> */}
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
           <Skills />
           <About />
         </div>

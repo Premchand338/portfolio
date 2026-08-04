@@ -19,7 +19,7 @@ function ThemeToggle() {
   return (
     <button
       onClick={() => setIsDark(!isDark)}
-      className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 dark:border-white/10 hover:bg-white/5 transition-colors"
+      className="w-9 h-9 flex items-center justify-center rounded-full border border-slate-300/30 bg-slate-900 text-white transition-colors hover:bg-slate-800 dark:border-slate-700/50 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-slate-200"
       aria-label="Toggle theme"
     >
       {isDark ? "☀️" : "🌙"}

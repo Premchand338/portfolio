@@ -6,22 +6,18 @@ export default function AnimatedButton({
   return (
     <button
       className="
-      group relative flex items-center gap-1 overflow-hidden
-      rounded-md border-2 border-slate-900/70
+      group relative mx-auto sm:mx-0 flex items-center gap-1 overflow-hidden
+      rounded-md border border-slate-300/30 bg-slate-900 text-white
       px-8 py-4
       font-semibold
-      text-slate-950
-      shadow-[0_0_0_2px_rgba(15,23,42,0.35)]
+      shadow-sm shadow-slate-900/10
       transition-all duration-700
       hover:border-transparent
-      hover:bg-linear-to-r
-      hover:from-blue-500
-      hover:via-violet-500
-      hover:to-cyan-400
+      hover:bg-slate-800
       active:scale-95
-      active:shadow-[0_0_0_4px_rgba(59,130,246,0.35)]
-      dark:border-cyan-400/40
-      dark:text-cyan-300
+      active:shadow-[0_0_0_6px_rgba(15,23,42,0.12)]
+      dark:border-slate-700/50 dark:bg-slate-100 dark:text-slate-950
+      dark:hover:bg-slate-200
       "
     >
       {/* Left Arrow */}

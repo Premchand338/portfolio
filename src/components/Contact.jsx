@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+// import DecorativeBackground from "./DecorativeBackground.jsx";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -30,11 +30,17 @@ function Contact() {
 
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
+    } else if (!/^[\p{L} ]+$/u.test(formData.name.trim())) {
+      newErrors.name = "Name must contain only letters and spaces";
     }
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (
+      !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+        formData.email
+      )
+    ) {
       newErrors.email = "Enter a valid email address";
     }
 
@@ -68,8 +74,9 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="group w-full px-6 md:px-12 lg:px-20 py-8 bg-white dark:bg-transparent transition-all duration-300 hover:bg-white/95 dark:hover:bg-slate-950/95"
+      className="relative group w-full px-6 md:px-12 lg:px-20 py-8 bg-white dark:bg-transparent transition-all duration-300"
     >
+       {/* <DecorativeBackground variant="contact" /> */}
       {/* Success toast */}
       {showSuccess && (
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-green-500/90 text-white px-6 py-3 rounded-full shadow-lg text-sm font-medium">
@@ -77,14 +84,15 @@ function Contact() {
         </div>
       )}
 
-      <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-transparent rounded-2xl p-8 md:p-16 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-blue-500/10 group-hover:-translate-y-1">
+      <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 bg-gray-50 dark:bg-gray-950 border border-gray-200 dark:border-transparent rounded-2xl p-8 md:p-16 transition-all duration-300">
         {/* Left side: info */}
         <div>
-          <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">
-            Connect . Collaborate .{" "}
-            <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-6xl">
-              Create .
+          <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+           Collaborate . {" "}
+            <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-5xl">
+              Create
             </span>
+            . Launch .
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
             If there's a real workflow problem — something that eats your time
@@ -194,7 +202,7 @@ function Contact() {
 
           <button
             type="submit"
-            className="relative overflow-hidden rounded-full px-8 py-3 font-semibold text-white transition-all duration-300 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-[0_18px_70px_-28px_rgba(139,92,246,0.8)] hover:-translate-y-1 hover:shadow-[0_22px_95px_-35px_rgba(236,72,153,0.7)] focus:outline-none focus:ring-2 focus:ring-blue-400/40"
+            className="relative overflow-hidden px-8 py-3 font-semibold text-white bg-slate-900 border border-slate-300/30 rounded-md shadow-sm shadow-slate-900/10 transition-all duration-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400/30 dark:bg-slate-100 dark:text-slate-950 dark:border-slate-700/50 dark:hover:bg-slate-200"
           >
             Send Message →
           </button>

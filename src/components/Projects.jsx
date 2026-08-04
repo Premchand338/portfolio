@@ -2,7 +2,7 @@ import expenseTrackerImg from "../assets/expense_tracker.jpg";
 import movieSearchImg from "../assets/movie_search.jpg";
 import aiResumeBuilderImg from "../assets/ai_resume_builder.jpg";
 import adminDashboardImg from "../assets/admin_dashboard.jpg";
-
+// import DecorativeBackground from "./DecorativeBackground.jsx";
 const projectList = [
   {
     id: 1,
@@ -64,7 +64,8 @@ const projectList = [
 
 function Projects() {
   return (
-    <section id="work" className="px-6 md:px-12 lg:px-20 py-20 bg-white dark:bg-gray-950">
+    <section id="work" className="relative px-6 md:px-12 lg:px-20 py-20 bg-white dark:bg-gray-950">
+       {/* <DecorativeBackground variant="projects" /> */}
       <p className="text-blue-600 dark:text-blue-400 text-xs tracking-widest uppercase mb-3">
         — Selected Work
       </p>

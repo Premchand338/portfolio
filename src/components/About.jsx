@@ -45,7 +45,7 @@ function About() {
         {process.map((item) => (
           <div
             key={item.step}
-            className="bg-transparent border rounded-2xl border-gray-400 dark:border-white/50 px-4 py-4 transition-all duration-300 ease-out hover:border-blue-400 dark:hover:border-blue-300/50"
+            className="bg-transparent border rounded-2xl border-gray-400 dark:border-white/50 px-4 py-4 transition-all duration-300 ease-out"
           >
             <span className="text-blue-600 dark:text-blue-400 text-sm font-mono">{item.step}</span>
             <h3 className="text-base font-semibold mt-2 mb-2 text-gray-900 dark:text-white">{item.title}</h3>

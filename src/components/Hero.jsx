@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import heroImg from "../assets/HeroImg.png";
 import { CodeXml } from "lucide-react"
 import AnimatedButton from "./AnimatedButton.jsx";
+import DecorativeBackground from "./DecorativeBackground.jsx";
 
 const features = [
   { icon: "</>", label: "Clean Code" },
@@ -37,23 +38,23 @@ function Hero() {
     <section
       ref={heroRef}
       className="relative flex items-center px-6 sm:px-8 md:px-12 lg:px-20 py-16 md:py-20 overflow-hidden bg-white dark:bg-gray-950">
+      <DecorativeBackground variant="hero" />
       {/* Grid background */}
        <div className="absolute inset-0 bg-[linear-gradient(rgba(96,165,250,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(96,165,250,0.05)_1px,transparent_1px)] bg-size-[50px_50px]" />
          <div className="absolute inset-0 dark:bg-gray-950 mask-[radial-gradient(ellipse_at_center,transparent_10%,black_75%)]" />
 
        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto w-full">
-        <div className="text-left">
-          <h1 className="text-lg sm:text-5xl md:text-6xl font-bold mb-3 opacity-0 animate-fade-up [animation-delay:0.2s]">
+        <div className="text-center sm:text-left">
+          <h2 className="text-lg sm:text-5xl md:text-6xl font-bold mb-3 opacity-0 animate-fade-up [animation-delay:0.2s] whitespace-nowrap">
             <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Premchand Shahu
             </span>
-          </h1>
-          <p className="text-gray-900 dark:text-white text-sm sm:text-base md:text-lg tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-3 opacity-0 animate-fade-up [animation-delay:0.3s] font-bold">
-            AI Product Developer | Product Designer
-          </p>
-          <p className="text-black dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 opacity-0 animate-fade-up [animation-delay:0.4s]">
-            I build automation systems and interfaces that solve real business
-            workflows not just clean code, but clean thinking.
+          </h2>
+          <h4 className="text-gray-900 dark:text-white text-sm sm:text-base md:text-lg tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-3 opacity-0 animate-fade-up [animation-delay:0.3s] font-bold">
+            AI Powered React Frontend Developer | Product Designer
+          </h4>
+          <p className="text-black dark:text-gray-400 text-xs sm:text-base leading-relaxed mb-6 sm:mb-8 opacity-0 animate-fade-up [animation-delay:0.4s]">
+            From AI automation to full-stack applications, I build scalable products that streamline workflows, reduce manual effort, and deliver measurable value through thoughtful engineering.
           </p>
 
           {/* <a
@@ -64,7 +65,7 @@ function Hero() {
           </a> */}
           <AnimatedButton />
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 opacity-0 animate-fade-up [animation-delay:0.6s] my-8">
+          <div className="hidden sm:grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 opacity-0 animate-fade-up [animation-delay:0.6s] my-8">
             {features.map((f) => (
               <div
                 key={f.label}
@@ -73,7 +74,7 @@ function Hero() {
               <div className="w-10 h-10 rounded-full bg-blue-500/10 dark:bg-blue-500/10 flex items-center justify-center text-xl text-gray-950 dark:text-white/90">
                   {f.icon}
               </div>
-                <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                <span className="text-xs sm:text-sm text-gray-900 dark:text-gray-300 whitespace-nowrap">
                   {f.label}
                 </span>
               </div>

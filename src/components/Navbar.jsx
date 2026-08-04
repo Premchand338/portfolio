@@ -38,7 +38,7 @@ function Navbar() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center px-4 py-2 rounded-full bg-blue-500 text-white text-sm font-semibold shadow-lg shadow-blue-500/20 transition hover:bg-blue-600"
+            className="hidden md:inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold shadow-lg shadow-blue-500/20 transition hover:bg-blue-600"
           >
             View CV
           </a>
@@ -46,7 +46,7 @@ function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-900 dark:text-white"
+            className="md:hidden bg-slate-900 text-white border border-slate-300/30 rounded-full px-3 py-2 transition-colors hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-950 dark:border-slate-700/50 dark:hover:bg-slate-200"
           >
             {isOpen ? "✕" : "☰"}
           </button>

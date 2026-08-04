@@ -50,7 +50,7 @@ function Skills() {
           // relative group bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-950 shadow-sm hover:shadow-lg/5
           <div
             key={category.title}
-            className="relative bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-950 shadow-sm hover:shadow-lg/5"
+            className="relative bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-white/10 rounded-xl p-6 transition-all duration-300 shadow-sm hover:-translate-y-1 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-950 hover:shadow-lg/5"
           >
             <div className={`absolute top-6 right-6 w-9 h-9 rounded-lg flex items-center justify-center font-mono text-sm ${iconBgMap[category.color]}`}>
               {category.icon}

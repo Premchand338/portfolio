@@ -21,7 +21,7 @@ function BackToTop() {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center shadow-lg transition-colors"
+        className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-slate-900 text-white border border-slate-300/30 rounded-full flex items-center justify-center shadow-sm shadow-slate-900/10 transition-colors hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-950 dark:border-slate-700/50 dark:hover:bg-slate-200"
       >
         ↑
       </button>
