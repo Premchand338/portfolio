@@ -7,6 +7,7 @@ function Contact() {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
@@ -14,13 +15,52 @@ function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+
+    // Clear the error for this field as soon as the user starts fixing it
+    if (errors[e.target.name]) {
+      setErrors({
+        ...errors,
+        [e.target.name]: "",
+      });
+    }
+  };
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const validationErrors = validate();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     console.log("Form submitted:", formData);
 
     setFormData({ name: "", email: "", message: "" });
+    setErrors({});
     setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 3000);
   };
@@ -87,7 +127,7 @@ function Contact() {
         </div>
 
         {/* Right side: form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">
@@ -99,8 +139,15 @@ function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className="w-full bg-transparent border rounded border-gray-400 dark:border-white/10 px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors"
+                className={`w-full bg-transparent border rounded px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-colors ${
+                  errors.name
+                    ? "border-red-500 focus:border-red-500"
+                    : "border-gray-400 dark:border-white/10 focus:border-blue-500 dark:focus:border-blue-400"
+                }`}
               />
+              {errors.name && (
+                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+              )}
             </div>
             <div>
               <label className="text-sm text-gray-600 dark:text-gray-400 mb-1 block">
@@ -112,8 +159,15 @@ function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="w-full bg-transparent border rounded border-gray-300 dark:border-white/10 px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors"
+                className={`w-full bg-transparent border rounded px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-colors ${
+                  errors.email
+                    ? "border-red-500 focus:border-red-500"
+                    : "border-gray-300 dark:border-white/10 focus:border-blue-500 dark:focus:border-blue-400"
+                }`}
               />
+              {errors.email && (
+                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+              )}
             </div>
           </div>
 
@@ -127,8 +181,15 @@ function Contact() {
               onChange={handleChange}
               rows="5"
               placeholder="Tell me what you're working on..."
-              className="w-full bg-transparent border rounded border-gray-300 dark:border-white/20 px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 transition-colors"
+              className={`w-full bg-transparent border rounded px-3 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-colors ${
+                errors.message
+                  ? "border-red-500 focus:border-red-500"
+                  : "border-gray-300 dark:border-white/20 focus:border-blue-500 dark:focus:border-blue-400"
+              }`}
             />
+            {errors.message && (
+              <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+            )}
           </div>
 
           <button
